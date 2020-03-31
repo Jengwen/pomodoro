@@ -31,7 +31,7 @@ getButton(){
 render(){
 
 return(
-<div className= "row" id="timer button">
+<div className= "row" id="timer-button">
     {this.getButton()}
 </div>
 );

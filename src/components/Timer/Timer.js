@@ -16,7 +16,6 @@ class Timer extends Component {
      this.state = {
       currentTime: moment.duration(25, 'minutes'),
       baseTime: moment.duration(25, 'minutes'),
-      breakTime: moment.duration(5, 'minutes'),
       TimerState: TimerState.NOT_SET,
       timer: null,
      };                                            
@@ -49,7 +48,7 @@ stopTimer(){
   }
   
   this.setState({
-    timerState: TimerState.NOT_SET,
+    TimerState: TimerState.NOT_SET,
     timer: null,
     currentTime: moment.duration(this.state.baseTime),
   });
@@ -77,7 +76,7 @@ completeTimer() {
     clearInterval (this.state.timer);
   }
   this.setState({
-    timerState: TimerState.COMPLETE,
+    TimerState: TimerState.COMPLETE,
     timer: null,
     });
 }
@@ -96,7 +95,7 @@ completeTimer() {
                {/*timer clock goes here */}
             <TimerDisplay 
             currentTime={this.state.currentTime}
-            timerState={this.state.timerState} />
+            TimerState={this.state.TimerState} />
             {/*timer input goes hre */}
             {/*hide timer input while timer is running*/}
             {
