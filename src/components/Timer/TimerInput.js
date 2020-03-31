@@ -20,7 +20,7 @@ this.props.setBaseTime(newBaseTime)
 
     render() {
         return(
-    <div>
+    <div id="set-timer">
     <div className = "row">
         <h2>Set Timer</h2>
         </div>
@@ -67,3 +67,4 @@ this.props.setBaseTime(newBaseTime)
         )
     }
     }
+export default TimerInput

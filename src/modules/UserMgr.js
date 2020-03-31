@@ -8,7 +8,7 @@ getAllUsers(){
 },
 //bring back one user from database
 getOneUser(id) {
-  return fetch(`${remoteUrl}/Users/${id}`).then(result => result.json());
+  return fetch(`${remoteURL}/Users/${id}`).then(result => result.json());
 },
 //post a new user to database
 
