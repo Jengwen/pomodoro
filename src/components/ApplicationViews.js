@@ -9,7 +9,12 @@ class ApplicationViews extends Component {
   render() {
     return (
       <React.Fragment>
-        
+        <Route
+       exact path = "/"
+       render = {props =>{
+         return <Timer {...props} />
+       }}
+    />
         {/*create route for user information*/}
         <Route
           exact
