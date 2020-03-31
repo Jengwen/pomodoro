@@ -11,11 +11,7 @@ class TimeClock extends Component {
       <>
         <NavBar />
         <ApplicationViews />
-        <div className="panel panel-default app-content center-block">
-        <div className="panel-body">
-          <Timer />
-        </div>
-      </div>
+        
       </>
     )
   }
