@@ -22,7 +22,7 @@ this.props.setBaseTime(newBaseTime)
         return(
     <div id="set-timer">
     <div className = "row">
-        <h2>Set Timer</h2>
+        <h2 className= "text-center">Set Timer</h2>
         </div>
         {/*create input for timer and change the countdown time display on change of input*/}
         <div className="row control-row">

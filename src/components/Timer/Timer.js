@@ -6,6 +6,7 @@ import TimerDisplay from "../Timer/TimerDisplay";
 import moment from 'moment';
 import * as TimerState from "../Timer/TimerState";
 import TimerButton from "../Timer/TimerButton";
+import "..Timer.css"
 
 class Timer extends Component {
 
@@ -15,6 +16,7 @@ class Timer extends Component {
      this.state = {
       currentTime: moment.duration(25, 'minutes'),
       baseTime: moment.duration(25, 'minutes'),
+      breakTime: moment.duration(5, 'minutes'),
       TimerState: TimerState.NOT_SET,
       timer: null,
      };                                            
