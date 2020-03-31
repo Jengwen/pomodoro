@@ -3,9 +3,10 @@ import { Button} from 'react-bootstrap';
 import * as TimerState from "./TimerState";
 
 
-//build start button and pause button 
+//build start button, complete and pause button 
 class TimerButton extends Component{
-//constructor method to
+
+//constructor method to create timer buttons
 
 constructor(){
     super();
@@ -15,19 +16,22 @@ constructor(){
 //function to determine which button to dislplay
 getButton(){
     if(this.props.TimerState ===TimerState.NOT_SET)
-    return (<Button onClick={this.props.startTimer}>Start</Button>)
-
+    return(<Button id= "start-button" variant="success" onClick={this.props.startTimer}>Start</Button>);
+    
     if(this.props.TimerState === TimerState.RUNNING)
-    return (<button onClick={this.props.startTimer}>Pause</button>)
-
+   return (<Button id= "pause-button" variant="danger" onClick={this.props.stopTimer}>Pause</Button>);
+   
     if(this.props.TimerState === TimerState.COMPLETE)
-    return (<button onClick={this.props.stopTimer}>End</button>)
-}
+    return (<Button id= "reset-button" variant= "primary" onClick={this.props.stopTimer}>Reset</Button>);
+    }
+
+//function to display a message to ask if task is complete
+
 
 render(){
 
 return(
-<div id="timer button">
+<div className= "row" id="timer button">
     {this.getButton()}
 </div>
 );

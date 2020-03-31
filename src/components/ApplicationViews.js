@@ -1,4 +1,4 @@
-import { Route, Redirect, withRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import UserCard from "./User/UserCard";
 import TaskList from "./Tasks/TaskList";
@@ -9,14 +9,7 @@ class ApplicationViews extends Component {
   render() {
     return (
       <React.Fragment>
-        {/*create route for task input page view*/}
-         <Route
-          exact
-          path="/"
-          render={props => {
-            return <Timer />;
-          }}
-        />
+        
         {/*create route for user information*/}
         <Route
           exact
