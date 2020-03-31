@@ -1,8 +1,30 @@
-.header{
+#header{
     text-align: center;
 }
 
-.set-timer{
-width: 500 px;
-margin-left:  10em;
+#timer-input{
+width: 500px;
+margin-left:  50em;
+
+}
+#input-fields{
+    margin-top: 2em;
+    width: 800px;
+    margin-left: 1em;
+}
+
+#task-input-form{
+    margin-left: 50em;
+    margin-top: 5em;
+margin-bottom: 3em;
+}
+.control-row{
+    margin-bottom: 8px;
+}
+.main-container{
+    margin-left:  50em;;
+}
+
+#timer-button{
+    margin-left: 50em;
 }

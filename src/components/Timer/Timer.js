@@ -1,22 +1,21 @@
-import React, { Component } from 'react'
-import { Form } from "react-bootstrap";
+import React, { Component } from 'react';
 import TaskInput from "../Tasks/TaskInput";
 import TimerInput from "../Timer/TimerInput";
 import TimerDisplay from "../Timer/TimerDisplay";
 import moment from 'moment';
 import * as TimerState from "../Timer/TimerState";
 import TimerButton from "../Timer/TimerButton";
-import "..Timer.css"
+import "./Timer.css"
 
 class Timer extends Component {
 
   //constructor method to set state of time
   constructor(){
     super();
+
      this.state = {
       currentTime: moment.duration(25, 'minutes'),
       baseTime: moment.duration(25, 'minutes'),
-      breakTime: moment.duration(5, 'minutes'),
       TimerState: TimerState.NOT_SET,
       timer: null,
      };                                            
@@ -30,9 +29,9 @@ this.reduceTimer= this.reduceTimer.bind(this);
 
  //set the Base Time
 setBaseTime(newBaseTime){
-this.setState({
-baseTime: newBaseTime,
-currentTime: newBaseTime,
+  this.setState({
+  baseTime: newBaseTime,
+  currentTime: newBaseTime,
 });
 }
 // function to start timer and remove input
@@ -45,28 +44,31 @@ startTimer(){
 //function to stop timer
 stopTimer(){
   if (this.state.timer){
-clearInterval (this.state.timer);
+    clearInterval (this.state.timer);
   }
+  
   this.setState({
-    timerState: TimerState.NOT_SET,
+    TimerState: TimerState.NOT_SET,
     timer: null,
-    currentTime: moment.duration(this.state.baseTime)
-  })
+    currentTime: moment.duration(this.state.baseTime),
+  });
 }
 
 // function to count down in timer
 reduceTimer(){
 if(this.state.currentTime.get('hours')=== 0
-&& this.state.currentTime.get('minutes')===0
-&& this.state.currentTime.get('seconds')===0){
-this.completeTimer();
-return;
+  && this.state.currentTime.get('minutes')===0
+  && this.state.currentTime.get('seconds')===0){
+  this.completeTimer();
+  return;
 }
-const newTime = moment.duration(this.state.currentTime());
+
+const newTime = moment.duration(this.state.currentTime);
 newTime.subtract(1, 'second');
+
 this.setState({
   currentTime: newTime,
-})
+});
 }
 // function to complete timer
 completeTimer() {
@@ -74,7 +76,7 @@ completeTimer() {
     clearInterval (this.state.timer);
   }
   this.setState({
-    timerState: TimerState.COMPLETE,
+    TimerState: TimerState.COMPLETE,
     timer: null,
     });
 }
@@ -84,34 +86,33 @@ completeTimer() {
     return (
       <div id="main-container">
         <div id="header">
-          <h2>Pomodoro Timer</h2>
+          <h2 className= "text-center">Pomodoro Timer</h2>
           </div>
           <div id="task-input">
             {/*Insert task iput form here*/}
           <TaskInput/>
           </div>
-          <div className="panel panel-default" id="clock">
-            
-            {/*timer clock goes here */}
-            <TimerDisplay currentTime={this.state.currentTime} />
-            {/*timer input goes here */}
+               {/*timer clock goes here */}
+            <TimerDisplay 
+            currentTime={this.state.currentTime}
+            TimerState={this.state.TimerState} />
+            {/*timer input goes hre */}
             {/*hide timer input while timer is running*/}
             {
               (this.state.TimerState !== TimerState.RUNNING)
               &&
-   ( <TimerInput 
-    baseTime= {this.state.baseTime}
-    setBaseTime={this.setBaseTime}
-            /> )
-             }
-    {/*Insert Timer button here to start timer*/}        
-       <TimerButton 
-       startTimer = {this.startTimer} 
-       stopTimer = {this.stopTimer}
-       TimerState= {this.TimerState}/>  
+              ( <TimerInput 
+                baseTime= {this.state.baseTime}
+                setBaseTime={this.setBaseTime}
+                /> ) 
+            }
+            {/*Insert Timer button here to start timer*/}        
+          <TimerButton 
+          startTimer = {this.startTimer} 
+          stopTimer = {this.stopTimer}
+          TimerState= {this.state.TimerState}/>  
           </div>  
-          
-      </div>
+         
       
     )
   }
