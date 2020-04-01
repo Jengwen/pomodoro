@@ -1,5 +1,5 @@
 //create local host variable
-const remoteURL = "http://localhost:44358/api";
+const remoteURL = "https://localhost:44358/api";
 
 export default {
     //   bring back users from database based on parameters

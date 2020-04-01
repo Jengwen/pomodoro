@@ -5,6 +5,8 @@ import TimerDisplay from "../Timer/TimerDisplay";
 import moment from 'moment';
 import * as TimerState from "../Timer/TimerState";
 import TimerButton from "../Timer/TimerButton";
+import TaskComplete from "../Tasks/TaskComplete";
+import TaskMgr from "../../modules/TaskMgr"
 import "./Timer.css"
 
 class Timer extends Component {
@@ -18,13 +20,19 @@ class Timer extends Component {
       baseTime: moment.duration(25, 'minutes'),
       TimerState: TimerState.NOT_SET,
       timer: null,
+      TaskName: "",
+      UserID: null,
+      IsComplete: false,
+      loadingStatus: false,
      };                                            
                                         
 //bind function to this     
 this.setBaseTime= this.setBaseTime.bind(this);
 this.startTimer= this.startTimer.bind(this);
 this.stopTimer= this.stopTimer.bind(this);
-this.reduceTimer= this.reduceTimer.bind(this);                             
+this.reduceTimer= this.reduceTimer.bind(this);  
+this.completeTask = this.CompleteTask.bind(this);      
+this.completeTask = this.CompleteTask.bind(this);                      
 }
 
  //set the Base Time
@@ -80,7 +88,37 @@ completeTimer() {
     timer: null,
     });
 }
+//method to create new incomplete task
+IncompleteTask = evt => {
+  evt.preventDefault();
+  {
+    this.setState({ loadingStatus: true });
+    const Task = {
+      Taskname: this.state.TaskName,
+      UserID: this.state.UserID,
+      isComplete: false
+    };
 
+    // Create the task and redirect user to task list
+    TaskMgr.post(Task).then(() => this.props.history.push("/Tasks"));
+  }
+};
+
+// create completed task
+CompleteTask = evt => {
+  evt.preventDefault();
+  {
+    this.setState({ loadingStatus: true });
+    const Task = {
+      Taskname: this.state.TaskName,
+      UserID: this.state.UserID,
+      isComplete: true
+    };
+
+    // Create the task and redirect user to task list
+    TaskMgr.post(Task).then(() => this.props.history.push("/Tasks"));
+  }
+};
 
   render() {
     return (
@@ -90,13 +128,26 @@ completeTimer() {
           </div>
           <div id="task-input">
             {/*Insert task iput form here*/}
-          <TaskInput/>
+          <TaskInput
+          TaskName= {this.state.TaskName}/>
+          </div>
+          {/*Insert task complete mesasage here when the timerState is complete*/}
+          <div>
+               {
+                 (this.state.TimerState === TimerState.COMPLETE)
+                 &&
+               ( <TaskComplete
+                TimerState= {this.state.TimerState}
+                taskComplete = {this.CompleteTask}
+                taskIncomplete = {this.IncompleteTask}
+                />)
+               }
           </div>
                {/*timer clock goes here */}
             <TimerDisplay 
             currentTime={this.state.currentTime}
             TimerState={this.state.TimerState} />
-            {/*timer input goes hre */}
+            {/*timer input goes here */}
             {/*hide timer input while timer is running*/}
             {
               (this.state.TimerState !== TimerState.RUNNING)
