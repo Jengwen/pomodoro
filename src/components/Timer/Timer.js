@@ -22,7 +22,7 @@ class Timer extends Component {
       timer: null,
       TaskName: "",
       UserID: null,
-      IsComplete: false,
+      IsComplete: "false",
       loadingStatus: false,
      };                                            
                                         
@@ -94,9 +94,9 @@ IncompleteTask = evt => {
   {
     this.setState({ loadingStatus: true });
     const Task = {
-      Taskname: this.state.TaskName,
+      TaskName: this.state.TaskName,
       UserID: this.state.UserID,
-      isComplete: false
+      IsComplete: "false"
     };
 
     // Create the task and redirect user to task list
@@ -110,9 +110,9 @@ CompleteTask = evt => {
   {
     this.setState({ loadingStatus: true });
     const Task = {
-      Taskname: this.state.TaskName,
+      TaskName: this.state.TaskName,
       UserID: this.state.UserID,
-      isComplete: true
+      IsComplete: "true"
     };
 
     // Create the task and redirect user to task list

@@ -12,7 +12,7 @@ getOneTask(id) {
 // post new tasks tp the database
 
 post(newTask) {
-  return fetch(`${remoteURL}/Tasks`, {
+  return fetch(`${remoteURL}/Tasks/PostTask`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
