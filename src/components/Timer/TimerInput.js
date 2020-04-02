@@ -3,6 +3,9 @@ import "./Timer.css"
 
 
 class TimerInput extends Component{
+
+    //build component to handle timer input
+    
     constructor(){
         super();
         this.handleChange = this.handleChange.bind(this)

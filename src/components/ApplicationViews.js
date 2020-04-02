@@ -6,6 +6,7 @@ import Timer from "./Timer/Timer";
 
 
 class ApplicationViews extends Component {
+  
   render() {
     return (
       <React.Fragment>

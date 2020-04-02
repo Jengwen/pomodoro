@@ -4,7 +4,7 @@ import React from 'react';
 const BreakTimer = () => (
 
         <div >
-        <h2 className="text-center">00:05:00</h2>
+        <h2>>00:05:00</h2>
     </div>
 );
 
