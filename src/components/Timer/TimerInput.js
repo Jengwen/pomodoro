@@ -42,7 +42,7 @@ class TimerInput extends Component{
             </div>
         </div>
                <div className= "row control-row">
-                    <div classNmae="form-group">                                
+                    <div className="form-group">                                
                         <div className= "col-sm-3">
                             <label htmlFor="minutes">Minutes</label>
                     </div>                                                    
@@ -57,7 +57,7 @@ class TimerInput extends Component{
             </div>
        </div>
        <div className= "row control-row">
-       <div classNmae="form-group">
+       <div className="form-group">
               <div className= "col-sm-3">
                 <label htmlFor="seconds">Seconds</label>
             </div>

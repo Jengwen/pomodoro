@@ -1,70 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Welcome to My Pomodor Timer
 
+
+The target users for this application are people interested in staying on task throughout their day.
+&nbsp;
+
+Download the aaplication from the following https://github.com/Jengwen/pomodoro
+
+You will need to install the following to run the program locally:
+
+```npm install
+npm install --save react-chartjs-2 chart.js
+npm install react-select
+```
 In the project directory, you can run:
 
-### `npm start`
+```npm start```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
+Which runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser. The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `npm test`
+The Api must also be run by forking the following:
+https://github.com/Jengwen/pomodoroApi
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When opened in Visual Studio you can press the ASCII run green button to start the API you will need to have a local SQL database available called pomodoro.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Home
+Users begin at the home page where they see the timer, a place to enter a task, and navigation to their user information and task lists.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Timer Operation
+The timer can be set to different times and can be started by the user clicking the green start button.  The timer can be paused or when the timer ends the use can reset the timer.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tasks
+Tasks can be entered at the timer start and the user will be prompted to save them either as complete or incomplete.
+The user can also find a list of their tasks by clicking on Tasks on the navigation bar.
+ 
+## User Info
 
-### `npm run eject`
+THe user's name and email can be seen by clicking on the my info tab in the navigation bar.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## TECHNICAL NOTES
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I used React Bootstrap for styling and Javascript React to build the applicatioon.  The API was built using a local SQL database and a C# ASP.NET backend built with Entity framework.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project was built with the following:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+*  [React](https://www.reactjs.org "React's Homepage")
+*  [React Bootstrap](https://react-bootstrap.github.io/ "Bootstrap Homepage")
+* [Entity](https://docs.microsoft.com/en-us/ef/ "Entity Documentation")
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This application was created by Jennifer Johnson see more <https://github.com/jengwen>
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# pomodoro
-# pomodoro

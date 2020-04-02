@@ -1,5 +1,5 @@
 //variable to hold remote url
-const remoteURL = "http://localhost:44358/api";
+const remoteURL = "https://localhost:44358/api";
 
 export default {
     //   bring back tasks based on parameters
@@ -12,7 +12,7 @@ getOneTask(id) {
 // post new tasks tp the database
 
 post(newTask) {
-  return fetch(`${remoteURL}/Tasks`, {
+  return fetch(`${remoteURL}/Tasks/PostTask`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
