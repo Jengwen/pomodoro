@@ -4,6 +4,8 @@ import "../Timer/Timer.css"
 
 
 class UserCard extends Component {
+
+  //set state
   state = {
     FirstName: "",
     LastName: "",
@@ -16,6 +18,8 @@ class UserCard extends Component {
   /* render user card */
 
   componentDidMount() {
+
+    //get one usaer back from database
     UserMgr.getOneUser().then(user => {
       console.log(user);
       this.setState({

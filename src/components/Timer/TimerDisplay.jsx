@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-// deal with m,issing 0 on less than 10 values
+// deal with missing 0 on less than 10 values
 const leftPad = (val)=>{
     if (val <10) return `0${val}`;
     return `${val}`;

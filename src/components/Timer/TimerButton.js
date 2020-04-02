@@ -25,11 +25,9 @@ getButton(){
     return (<Button id= "reset-button" variant= "primary" onClick={this.props.stopTimer}>Reset</Button>);
     }
 
-//function to display a message to ask if task is complete
-
 
 render(){
-
+//returns buttons
 return(
 <div className= "row" id="timer-button">
     {this.getButton()}

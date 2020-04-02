@@ -3,6 +3,7 @@ import NavBar from "./Nav/NavBar"
 import ApplicationViews from "./ApplicationViews"
 import {withRouter} from 'react-router-dom';
 
+//main appliocation component
 
 class TimeClock extends Component {
   

@@ -3,7 +3,8 @@ import { Form } from "react-bootstrap";
 import "../Timer/Timer.css"
 
 class TaskInput extends Component{
-    
+  //render task input form  
+  
     render(){
         return(
         <div id="task-input-form">
