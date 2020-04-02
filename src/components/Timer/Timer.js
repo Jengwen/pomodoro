@@ -6,6 +6,7 @@ import moment from 'moment';
 import * as TimerState from "../Timer/TimerState";
 import TimerButton from "../Timer/TimerButton";
 import TaskComplete from "../Tasks/TaskComplete";
+import BreakTimer from "../Timer/BreakTimer";
 import TaskMgr from "../../modules/TaskMgr"
 import "./Timer.css"
 
@@ -18,6 +19,7 @@ class Timer extends Component {
      this.state = {
       currentTime: moment.duration(25, 'minutes'),
       baseTime: moment.duration(25, 'minutes'),
+      breakTime: moment.duration(5, 'minutes'),
       TimerState: TimerState.NOT_SET,
       timer: null,
       TaskName: "",
@@ -140,17 +142,21 @@ CompleteTask = evt => {
                 TimerState= {this.state.TimerState}
                 taskComplete = {this.CompleteTask}
                 taskIncomplete = {this.IncompleteTask}
+                breakTime = {this.state.breakTime}
+                TimerState ={this.state.TimerState}
                 />)
                }
           </div>
-               {/*timer clock goes here */}
+             {/*timer clock goes here */}
             <TimerDisplay 
             currentTime={this.state.currentTime}
             TimerState={this.state.TimerState} />
+
             {/*timer input goes here */}
             {/*hide timer input while timer is running*/}
             {
-              (this.state.TimerState !== TimerState.RUNNING)
+              (this.state.TimerState !== TimerState.RUNNING || this.state.TimerState === TimerState.COMPLETE)
+               
               &&
               ( <TimerInput 
                 baseTime= {this.state.baseTime}
